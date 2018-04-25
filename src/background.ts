@@ -125,6 +125,10 @@ function closeDuplicate() {
   );
 }
 
+function injectScript() {
+  
+}
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   switch (request.type) {
     case "sortTabsByHostname":

@@ -39,4 +39,26 @@ $(() => {
       type: "closeDuplicate"
     });
   });
+
+  $("#injectScript").click(() => {
+    // chrome.runtime.sendMessage({
+    //   type: "closeDuplicate"
+    // });
+
+    // chrome.tabs.executeScript(
+    //   null,
+    //   { code: `Array.from(document.querySelectorAll(".delfav")).map(el => el.click());` },
+    //   result => {
+    //     console.log(result);
+    //   }
+    // );
+
+    chrome.tabs.executeScript(
+      null,
+      { file: "./js/inject_script.js" },
+      result => {
+        console.log(result);
+      }
+    );
+  });
 });
